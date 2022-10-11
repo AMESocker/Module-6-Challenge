@@ -9,101 +9,105 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./contents/style.css"/>
 </head>
-<body style="background-color: blue;">
-        <main class="row justify-content-around vh-100 align-content-around">
-            <form class="col-8 bg-white p-5">
-                <h1 class="form-title text-center">Find 5 Day Weather Forecast</h1>
-                <div class="form-row ">
-                    <div class="form-group col-12">
-                        <input type="search"  id="city" class="form-control" placeholder="Location"/>
+<body ><!--Start Page-->
+        <main style=" background-color: blue;" class="row justify-content-around vh-100 align-content-around">
+            <div id="StartBox" style="display:contents;">
+                <form   class="col-8 bg-white p-5">
+                    <h1 class="form-title text-center">Find 5 Day Weather Forecast</h1>
+                    <div class="form-row ">
+                        <div class="form-group col-12">
+                            <input type="text"  id="city" class="form-control" placeholder="Location"/>
+                        </div>
                     </div>
-                </div>
-                <button type="button" class="btn btn-primary col-12" id="getForecastButton">Get Forecast</button>
-            </form>
-            <div style="background-color:black; display: none;" class="container"><!--5 day Forecast-->
+                    <button type="button" class="btn btn-primary col-12" id="getForecastButton">Get Forecast</button>
+                </form>
+            </div>
+            <div id="5day" style="display:none;">
+                <div class="container"><!--5 day Forecast-->
 
-                <div  class="row"><!--Row One-->
-       
-                    <div style="justify-content: center; border: 5px;"class="col-xl">
-    
-                        <!-- Card Current-->
-    
-                        <div style="margin: 10px;" class="card">
-                            <ul class="list-group list-group-flush"><!--add to this list-->
-                                <li class="list-group-item">Date-Icon Current Weather</li>
-                                <li class="list-group-item">Temp</li>
-                                <li class="list-group-item">Wind Speed</li>
-                                <li class="list-group-item">Humidity</li>
-                            </ul>
-                        </div>            
-                    </div>
-                </div>
-                <div style="margin: 5px;"class="row"><!--Row Two-->
-                    <div class="col">
-    
-                        <!-- Card 1-day-->
-    
-                        <div class="card" style="width: 10rem;">
-                            <ul class="list-group list-group-flush"><!--add to this list-->
-                                <li class="list-group-item">Date-Icon</li>
-                                <li class="list-group-item">Temp</li>
-                                <li class="list-group-item">Wind Speed</li>
-                                <li class="list-group-item">Humidity</li>
-                            </ul>
+                    <div  class="row"><!--Row One-->
+        
+                        <div style="justify-content: center; border: 5px;"class="col-xl">
+        
+                            <!-- Card Current-->
+        
+                            <div style="margin: 10px;" class="card">
+                                <ul class="list-group list-group-flush"><!--add to this list-->
+                                    <li class="list-group-item">Date-Icon Current Weather</li>
+                                    <li class="list-group-item">Temp</li>
+                                    <li class="list-group-item">Wind Speed</li>
+                                    <li class="list-group-item">Humidity</li>
+                                </ul>
+                            </div>            
                         </div>
                     </div>
-                    <div class="col">
-    
-                        <!-- Card 2-day-->
-    
-                        <div class="card" style="width: 10rem;">
-                            <ul class="list-group list-group-flush"><!--add to this list-->
-                                <li class="list-group-item">Date-Icon</li>
-                                <li class="list-group-item">Temp</li>
-                                <li class="list-group-item">Wind Speed</li>
-                                <li class="list-group-item">Humidity</li>
-                            </ul>
-                        </div>             
-                    </div>
-                    <div class="col">
-    
-                        <!-- Card 3-day-->
-    
-                        <div class="card" style="width: 10rem;">
-                            <ul class="list-group list-group-flush"><!--add to this list-->
-                                <li class="list-group-item">Date-Icon</li>
-                                <li class="list-group-item">Temp</li>
-                                <li class="list-group-item">Wind Speed</li>
-                                <li class="list-group-item">Humidity</li>
-                            </ul>
+                    <div style="margin: 5px;"class="row"><!--Row Two-->
+                        <div class="col">
+        
+                            <!-- Card 1-day-->
+        
+                            <div class="card" style="width: 10rem;">
+                                <ul class="list-group list-group-flush"><!--add to this list-->
+                                    <li class="list-group-item">Date-Icon</li>
+                                    <li class="list-group-item">Temp</li>
+                                    <li class="list-group-item">Wind Speed</li>
+                                    <li class="list-group-item">Humidity</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col">
-    
-                        <!-- Card 4-day-->
-    
-                        <div class="card" style="width: 10rem;">
-                            <ul class="list-group list-group-flush"><!--add to this list-->
-                                <li class="list-group-item">Date-Icon</li>
-                                <li class="list-group-item">Temp</li>
-                                <li class="list-group-item">Wind Speed</li>
-                                <li class="list-group-item">Humidity</li>
-                            </ul>
+                        <div class="col">
+        
+                            <!-- Card 2-day-->
+        
+                            <div class="card" style="width: 10rem;">
+                                <ul class="list-group list-group-flush"><!--add to this list-->
+                                    <li class="list-group-item">Date-Icon</li>
+                                    <li class="list-group-item">Temp</li>
+                                    <li class="list-group-item">Wind Speed</li>
+                                    <li class="list-group-item">Humidity</li>
+                                </ul>
+                            </div>             
                         </div>
-                    </div>
-                    <div class="col">
-    
-                        <!-- Card 5-day-->
-                        
-                        <div class="card" style="width: 10rem;">
-                            <ul class="list-group list-group-flush"><!--add to this list-->
-                                <li class="list-group-item">Date-Icon</li>
-                                <li class="list-group-item">Temp</li>
-                                <li class="list-group-item">Wind Speed</li>
-                                <li class="list-group-item">Humidity</li>
-                            </ul>
+                        <div class="col">
+        
+                            <!-- Card 3-day-->
+        
+                            <div class="card" style="width: 10rem;">
+                                <ul class="list-group list-group-flush"><!--add to this list-->
+                                    <li class="list-group-item">Date-Icon</li>
+                                    <li class="list-group-item">Temp</li>
+                                    <li class="list-group-item">Wind Speed</li>
+                                    <li class="list-group-item">Humidity</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>                        
+                        <div class="col">
+        
+                            <!-- Card 4-day-->
+        
+                            <div class="card" style="width: 10rem;">
+                                <ul class="list-group list-group-flush"><!--add to this list-->
+                                    <li class="list-group-item">Date-Icon</li>
+                                    <li class="list-group-item">Temp</li>
+                                    <li class="list-group-item">Wind Speed</li>
+                                    <li class="list-group-item">Humidity</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col">
+        
+                            <!-- Card 5-day-->
+                            
+                            <div class="card" style="width: 10rem;">
+                                <ul class="list-group list-group-flush"><!--add to this list-->
+                                    <li class="list-group-item">Date-Icon</li>
+                                    <li class="list-group-item">Temp</li>
+                                    <li class="list-group-item">Wind Speed</li>
+                                    <li class="list-group-item">Humidity</li>
+                                </ul>
+                            </div>
+                        </div>                        
+                    </div>
                 </div>
             </div>
         </main>   
