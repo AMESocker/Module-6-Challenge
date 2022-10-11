@@ -2,22 +2,9 @@ var locationBox = document.getElementById("city");  //set input variable from in
 var apiKey = config.SECRET_KEY;    //use to add to api key, can change
 // var apiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q='+lItemStorage+'&appid='+apiKey;
 // var forecastButton = $("#getForecastButton");
+console.log('Assemble the minions!')
 
-//Tests
-// console.log(locBoxValue)
-// console.log(apiKey)
-// console.log(apiUrl)
-// console.log(forecastButton.val())
-
-//--Display start page
-// if(localStorage.getItem.value = true){
-//     document.getElementById("StartBox").style.display='none';
-//     document.getElementById("5day").style.display='contents';
-// } else if(localStorage.getItem.value == false){
-//     document.getElementById("StartBox").style.display='contents';
-//     document.getElementById("5day").style.display='none';
-// };
-
+//----Button to get log and lat of location----No option to choose state----
 $("#getForecastButton").on("click", function(){   //Listen for click                                
     localStorage.setItem("LocationItem", document.getElementById("city").value); //set value of input box
     lItemStorage = localStorage.getItem("LocationItem", document.getElementById("city").value);
@@ -25,10 +12,10 @@ $("#getForecastButton").on("click", function(){   //Listen for click
     locationBox.value;
     console.log("You've got to be pulling on my leg.");
     // console.log(locBoxValue);
-    console.log(apiUrl);
+    // console.log(apiUrl);
     console.log(locationBox.value)
-    document.getElementById("StartBox").style.display='none';
-    document.getElementById("5day").style.display='contents';
+    // document.getElementById("StartBox").style.display='none';
+    // document.getElementById("5day").style.display='contents';
     // document.location = ("./pages/Locations.html");
     getLocalData();
 
@@ -42,12 +29,27 @@ function getLocalData(event) {
             return response.json();
         })
         .then(function (data) {
+            console.log("Whoa, whoa, whoa! What was that?");
             console.log(data)
-            console.log("Assemble the minions!");
-            document.getElementById("currentCard").appendChild(document.createElement("li class='list-group-item'"));
-            document.getElementById("currentCard").appendChild(document.createElement("li"));
-            document.getElementById("currentCard").appendChild(document.createElement("li"));
-            document.getElementById("currentCard").appendChild(document.createElement("li"));
+            console.log(data[0].lat);
+            console.log(data[0].lon);
+            latData = data[0].lat;
+            lonData = data[0].lon;
+            latLonUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat='+latData+'&lon='+lonData+'&appid='+apiKey+'&units=imperial';
+            fetch(latLonUrl)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function (data){
+                    console.log(data);
+                })
+            console.log("Cookie robots! I said cookie robots!")
+            console.log(latLonUrl)
+            //This would be better with a for loop. For now it works.
+            document.getElementById("currentCard").appendChild(document.createElement("li")).classList.add('list-group','list-group-flush');
+            document.getElementById("currentCard").appendChild(document.createElement("li")).classList.add('list-group','list-group-flush');
+            document.getElementById("currentCard").appendChild(document.createElement("li")).classList.add('list-group','list-group-flush');
+            document.getElementById("currentCard").appendChild(document.createElement("li")).classList.add('list-group','list-group-flush');
         })
 }
 // function
@@ -76,4 +78,19 @@ function getLocalData(event) {
 // console.log(nextPage)
 
 
-// forecastButton.addEventListener("click", console.log('Why can’t they call me the Adorable Snowman'));
+/* original 6-19
+//Tests
+// console.log(locBoxValue)
+// console.log(apiKey)
+// console.log(apiUrl)
+// console.log(forecastButton.val())
+
+//--Display start page--Combined to one page
+// if(localStorage.getItem.value = true){
+//     document.getElementById("StartBox").style.display='none';
+//     document.getElementById("5day").style.display='contents';
+// } else if(localStorage.getItem.value == false){
+//     document.getElementById("StartBox").style.display='contents';
+//     document.getElementById("5day").style.display='none';
+// };
+*/
