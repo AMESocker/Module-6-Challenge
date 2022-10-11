@@ -1,5 +1,5 @@
 var locationBox = document.getElementById("city");  //set input variable from input element
-var apiKey = "6e276c3617ea3475d24d053e638998d7";    //use to add to api key, can change
+var apiKey = config.SECRET_KEY;    //use to add to api key, can change
 // var apiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q='+lItemStorage+'&appid='+apiKey;
 // var forecastButton = $("#getForecastButton");
 
@@ -44,6 +44,10 @@ function getLocalData(event) {
         .then(function (data) {
             console.log(data)
             console.log("Assemble the minions!");
+            document.getElementById("currentCard").appendChild(document.createElement("li class='list-group-item'"));
+            document.getElementById("currentCard").appendChild(document.createElement("li"));
+            document.getElementById("currentCard").appendChild(document.createElement("li"));
+            document.getElementById("currentCard").appendChild(document.createElement("li"));
         })
 }
 // function
