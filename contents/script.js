@@ -20,7 +20,7 @@ console.log('Assemble the minions!')
 $("#getForecastButton").on("click", function(){   //Listen for click                                
     localStorage.setItem("LocationItem", document.getElementById("city").value); //set value of input box
     lItemStorage = localStorage.getItem("LocationItem", document.getElementById("city").value);
-    apiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q='+lItemStorage+'&appid='+apiKey;
+    apiUrl = 'https://api.openweathermap.org/geo/1.0/direct?q='+lItemStorage+'&appid='+apiKey;
     locationBox.value;
     console.log("You've got to be pulling on my leg.");
     // console.log(locBoxValue);
