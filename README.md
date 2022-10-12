@@ -1,4 +1,8 @@
-# Module-6-Challenge
+# Weather-Forcast-M6C
+
+## Deployed Page
+
+  https://amesocker.github.io/Weather-Forecast-M6C/
 
 ## Tools Used
 
