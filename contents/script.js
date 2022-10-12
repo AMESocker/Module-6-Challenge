@@ -2,6 +2,7 @@ var locationBox = document.getElementById("city");  //set input variable from in
 var apiKey = config.SECRET_KEY;    //use to add to api key, can change
 // var apiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q='+lItemStorage+'&appid='+apiKey;
 // var forecastButton = $("#getForecastButton");
+var Today = moment().format('dddd')
 console.log('Assemble the minions!')
 
 //----Button to get log and lat of location----No option to choose state----
@@ -42,14 +43,18 @@ function getLocalData(event) {
                 })
                 .then(function (data){
                     console.log(data);
+                    document.getElementById("cCity").innerText=data.city.name;
+                    document.getElementById("cDate").innerText=Today;
+                    document.getElementById("cIcon").innerHTML='<img src=http://openweathermap.org/img/wn/'+data.list[0].weather[0].icon+'.png>';
+                    document.getElementById("cTemp").innerText='Temperature: '+data.list[0].main.temp+' F';
+                    document.getElementById("cWindS").innerText='Wind Speed: '+data.list[0].wind.speed;
+                    document.getElementById("cHum").innerText='Humidity: '+data.list[0].main.humidity+'%';
                 })
             console.log("Cookie robots! I said cookie robots!")
             console.log(latLonUrl)
             //This would be better with a for loop. For now it works.
-            document.getElementById("currentCard").appendChild(document.createElement("li")).classList.add('list-group','list-group-flush');
-            document.getElementById("currentCard").appendChild(document.createElement("li")).classList.add('list-group','list-group-flush');
-            document.getElementById("currentCard").appendChild(document.createElement("li")).classList.add('list-group','list-group-flush');
-            document.getElementById("currentCard").appendChild(document.createElement("li")).classList.add('list-group','list-group-flush');
+            
+
         })
 }
 // function
