@@ -1,6 +1,6 @@
 var locationBox = document.getElementById("city");  //set input variable from input element
 var apiKey = config.SECRET_KEY;    //use to add to api key, can change
-// var apiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q='+lItemStorage+'&appid='+apiKey;
+// var apiUrl = 'https://api.openweathermap.org/geo/1.0/direct?q='+lItemStorage+'&appid='+apiKey;
 // var forecastButton = $("#getForecastButton");
 var Today = moment().format('dddd')
 console.log('Assemble the minions!')
@@ -57,14 +57,14 @@ function getSiteData(event) {
                     //Current
                     document.getElementById("cCity").innerHTML='<b>'+data.city.name+'</b>';
                     document.getElementById("cDate").innerText=Today;
-                    document.getElementById("cIcon").innerHTML='<img src=http://openweathermap.org/img/wn/'+data.list[0].weather[0].icon+'.png>';
+                    document.getElementById("cIcon").innerHTML='<img src=https://openweathermap.org/img/wn/'+data.list[0].weather[0].icon+'.png>';
                     document.getElementById("cTemp").innerText='Temperature: '+data.list[0].main.temp+' F';
                     document.getElementById("cWindS").innerText='Wind Speed: '+data.list[0].wind.speed;
                     document.getElementById("cHum").innerText='Humidity: '+data.list[0].main.humidity+'%';
                     //5 Day
                     for(i=1;i<6;i++){
                     document.getElementById(i+"dD").innerText=moment().add(i,'days').format('dddd');
-                    document.getElementById(i+"dI").innerHTML='<img src=http://openweathermap.org/img/wn/'+data.list[i*8-1].weather[0].icon+'.png>';
+                    document.getElementById(i+"dI").innerHTML='<img src=https://openweathermap.org/img/wn/'+data.list[i*8-1].weather[0].icon+'.png>';
                     document.getElementById(i+"dT").innerText='Temperature Max: '+data.list[i*8-1].main.temp_max+' F';
                     document.getElementById(i+"dW").innerText='Wind Speed: '+data.list[i*8-1].wind.speed;
                     document.getElementById(i+"dH").innerText='Humidity: '+data.list[i*8-1].main.humidity+'%';
