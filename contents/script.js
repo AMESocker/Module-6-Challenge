@@ -5,6 +5,17 @@ var apiKey = config.SECRET_KEY;    //use to add to api key, can change
 var Today = moment().format('dddd')
 console.log('Assemble the minions!')
 
+// function getLocalData(){
+//     var gLD = JSON.parse(localStorage.getItem('LocationItem')) || [];
+//     if (gLD !== null){
+//         localStorage.getItem("LocationItem", document.getElementById("city").value); 
+//         gLD.push('city')
+//     }
+// }
+
+
+// getLocalData();
+// console.log(getLocalData)
 //----Button to get log and lat of location----No option to choose state----
 $("#getForecastButton").on("click", function(){   //Listen for click                                
     localStorage.setItem("LocationItem", document.getElementById("city").value); //set value of input box
@@ -18,12 +29,12 @@ $("#getForecastButton").on("click", function(){   //Listen for click
     // document.getElementById("StartBox").style.display='none';
     // document.getElementById("5day").style.display='contents';
     // document.location = ("./pages/Locations.html");
-    getLocalData();
+    getSiteData();
 
 }
 );
 
-function getLocalData(event) {
+function getSiteData(event) {
     
     fetch(apiUrl)
         .then(function(response){

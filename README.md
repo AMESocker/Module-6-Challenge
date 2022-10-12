@@ -1,12 +1,21 @@
 # Module-6-Challenge
 
-https://openweathermap.org/forecast5
+## Tools Used
 
-https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+        Visual Studio Code
+        GitHub
+        Git Bash
+        Google Chrome
+        Moment js 2.24.0
+        jQuery 3.4.1
+        Bootstrap 5.2.2
 
-http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
+## Websites Used
 
-https://api.weather.gov/points/{latitude},{longitude}
+    https://openweathermap.org/forecast5
+    https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+    http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
+
 
 ## User Story
 
@@ -18,15 +27,25 @@ SO THAT I can plan a trip accordingly
 
 GIVEN a weather dashboard with form inputs
 
-TODO:
+
 WHEN I search for a city
 THEN I am presented with current and future conditions for that city and that city is added to the search history
 
 WHEN I view current weather conditions for that city
 THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
-TODO:
+
 WHEN I view future weather conditions for that city
 THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-TODO:
+
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
+
+## Challenges
+
+    I had trouble getting the local data to populate in the search box on load. I also had trouble populating multiple data value into local storage. 
+
+## Accomplishments
+
+    I implemented a for loop in my own work and successfully ran the loop for the desired results. The other option of writing every function out rather then just learn the method saved a lot of time.
+
+    I was also successfully pull the data and populate for multiple times. 
