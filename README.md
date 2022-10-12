@@ -1,4 +1,4 @@
-# Weather-Forcast-M6C
+# Weather-Forecast-M6C
 
 ## Deployed Page
 
